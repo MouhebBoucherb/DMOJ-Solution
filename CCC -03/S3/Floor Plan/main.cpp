@@ -18,7 +18,7 @@ void compute(int i,int j)
     for(int x=0;x<4;x++){
         int t1=i+dir[x].first;
         int t2=j+dir[x].second;
-        if( (t1>0 )&& (t1<r)&& (t2>0) && (t2<c) &&(M[t1][t2]== '.') ){
+        if( (M[t1][t2]== '.') ){
             compute(t1,t2);
         }
     }
@@ -39,7 +39,9 @@ int main()
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
             if(M[i][j]=='.'){
+
                 compute(i,j);
+
                 floors.push_back(floore);
                 floore=0;
             }
